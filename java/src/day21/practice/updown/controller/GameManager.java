@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class GameManager implements Program{
 	
-	//리터럴 3에 이름을 붙여서 명확하게 전다하기 위해.
+	//리터럴 3에 이름을 붙여서 명확하게 전달하기 위해.
 	private static final int EXIT = 3;
 
 	//다른 메서드에서 매번 객체를 생성하는게 번거로워서
