@@ -1,42 +1,27 @@
 package day25.practice.student.vo;
 
-import day25.practice.student.vo.Student;
-
 public class Student {
-	private String classnum, department, name;
-	
-	
-	
-	public Student(String classnum, String department, String name) {
-		super();
-		this.classnum = classnum;
-		this.department = department;
-		this.name = name;
-	}
 
+	private String num, name, major;
+
+	public Student(String num, String name, String major) {
+		this.num = num;
+		this.name = name;
+		this.major = major;
+	}
 	
-	
+
 	@Override
 	public String toString() {
-		return "Student [classnum=" + classnum + ", department=" + department + ", name=" + name + "]";
+		return "학번 : " + num + "\n이름 : " + name + "\n전공 : " + major;
 	}
 
-
-
-	public String getClassnum() {
-		return classnum;
+	public String getNum() {
+		return num;
 	}
 
-	public void setClassnum(String classnum) {
-		this.classnum = classnum;
-	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
+	public void setNum(String num) {
+		this.num = num;
 	}
 
 	public String getName() {
@@ -46,6 +31,14 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	
+	
 }

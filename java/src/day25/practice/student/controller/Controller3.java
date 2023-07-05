@@ -4,21 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import day25.practice.vo.Student;
+import day25.practice.student.vo.Student;
 
-public class Controller2 {
+public class Controller3 {
 
+	private Scanner sc = new Scanner(System.in);
+	private List<Student> list = new ArrayList<Student>();
+	
 	public void run() {
-		Scanner sc = new Scanner(System.in);
+		
 		int menu;
-		List<Student> list = new ArrayList<Student>();
+		
 		do {
 			//메뉴 출력
 			printMenu();
 			//메뉴 선택(메뉴를 입력받음) : Scanner 필요
 			menu = sc.nextInt();
 			//선택된 메뉴에 따른 기능을 실행
-			runMenu(menu, sc, list);
+			runMenu(menu);
 			
 		}while(menu != 3);
 		sc.close();
@@ -31,15 +34,15 @@ public class Controller2 {
 		System.out.print("메뉴 선택 : ");
 	}
 	
-	private void runMenu(int menu, Scanner sc, List<Student> list) {
+	private void runMenu(int menu) {
 		switch(menu) {
 		case 1:
 			//학생정보 입력
-			insertStudent(sc, list);
+			insertStudent();
 			break;
 		case 2:
 			//학생 전체를 확인
-			print(list);
+			print();
 			break;
 		case 3:
 			break;
@@ -47,7 +50,7 @@ public class Controller2 {
 		}
 	}
 	
-	public void insertStudent(Scanner sc, List<Student> list) {
+	public void insertStudent() {
 		String num, name, major;
 		Student tmp;
 		//학번(문자열, 공백이 없는)
@@ -67,7 +70,7 @@ public class Controller2 {
 		list.add(tmp);
 	}
 	
-	public void print(List<Student> list) {
+	public void print() {
 		for(Student tmp2 : list) {
 			System.out.println(tmp2);
 		}

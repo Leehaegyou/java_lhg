@@ -1,13 +1,12 @@
 package day25.practice.student.run;
 
-import day25.practice.student.controller.Controller2;
+import day25.practice.student.controller.Controller3;
 
 public class Run {
 
 	public static void main(String[] args) {
-		Controller2 sc = new Controller2();
+		Controller3 sc = new Controller3();
 		sc.run();
 	}
 
 }
-	
