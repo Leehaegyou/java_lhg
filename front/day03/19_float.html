@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>float 예제</title>
+	<style>
+		.box{
+			width: 100px; height: 100px; background-color: yellow;
+			float: left;
+		}
+		.box2{ height: 50px; float: right;}
+		.container::after{
+			clear: right; content: ''; display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class=" box box1">1</div>
+		<div class=" box box2">2</div>
+		<div style="clear: both;"></div>
+	</div>
+	<p>안녕하세요. 제 이름은 홍길동입니다.</p>
+</body>
+</html>
