@@ -4,63 +4,119 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Naver</title>
-	<style>
-		*{padding: 0; margin: 0; color: ;}
-		a{ text-decoration: none;}
-		header{
-			width: 1280px;
-			margin: 0 auto;
-			position: relative;
-			background-color: yellow;
-			height: 200px;
-		#ham-menu{
-			position: absolute; top: 18px; left: -10px;
-			width: 30px; height: 30px;
-			background-color: blue;
-		}
-		#ham_menu .btn-ham{
-			padding: 10px; cursor: pointer;
-			background-color: transparent; border: 0; outline: 0;
-		}
-		#ham_menu .btn-ham::after{
-			content: ''; display: block; background-image: url(../img/naver_icon.png);
-			background-size: 422px 405px;
-			background-position: -355px -284px;
-			width: 26px; height: 26px;
-		}
-		#ham_menu .btn-ham::before{
-			content: ''; display: block; position: absolute; top: 1px; left: 1px;
-			width: 44px; height: 44px; border-radius: 50%;
-			background-color: #f5f6f7;	
-		}
-		#box_search{
-			width: 706px; position: absolute;
-			left: 50%;
-		}
-		}
-		#container{
-			width: 1280px;
-			margin: 0 auto;
-			background-color: red;
-			height: 500px;
-		}
-		footer{
-			min-width: 1280px; 
-			background-color: #f5f6f7;
-			height: 300px;
-		}
-		
-	</style>
+	<link rel="stylesheet" href="naver.css">
 </head>
 <body>
 	<header>
-		<div id="ham-menu">
+		<div id="ham_menu">
 			<button class="btn-ham">
-				<span>확장 영역</span>
+				<!-- 
+					웹 표준은 웹접근성이 좋아야 함. 
+					=> 시력이 불편한 분들이 리더기를 통해 사이트를 방문해도 사이트를 이용할 수 있게 하기 
+					   위해 아이콘, 이미지 등에도 안보이게 글자를 추가
+				-->
+				<span class="blind">확장 영역</span>
 			</button>
 		</div>
+		<!-- 햄거버 메뉴 끝 -->
+		<div id="box_search" class="clearfix">
+			<div class="box-logo">
+				<a href="#" class="link-logo">
+					<img src="../img/naver_7_17_logo.png" alt="로고" class="img-link-logo" width="58px" height="58px">
+				</a>
+			</div>
+			<form class="box-search-input">
+				<fieldset>
+					<legend class="blind">검색</legend>
+					<div class="box-input clearfix">
+						<input type="text" class="input-search" placeholder="검색어를 입력해 주세요.">
+					</div>
+					<button class="btn-search">
+						<span class="icon-search"></span>
+						<span class="blind">검색</span>
+					</button>
+				</fieldset>
+			</form>
+			<div class="box-btns">
+				<button class="btn-kbd">
+					<span class="blind">입력도구</span>
+				</button>
+				<button class="btn-autocomplete">
+					<span class="blind">자동완성/최근검색어펼치기</span>
+				</button>
+			</div>
+		</div>
+		<!-- 검색창 끝 -->
+		<div class="shortcut-area">
+			<ul class="shortcut-list clearfix">
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service mail"></span>
+						<span class="name-service">메일</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service cafe"></span>
+						<span class="name-service">카페</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service blog"></span>
+						<span class="name-service">블로그</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service shopping"></span>
+						<span class="name-service">쇼핑</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service news"></span>
+						<span class="name-service">뉴스</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service stock"></span>
+						<span class="name-service">증권</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service real"></span>
+						<span class="name-service">부동산</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service map"></span>
+						<span class="name-service">지도</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service webtoon"></span>
+						<span class="name-service">웹툰</span>
+					</a>
+				</li>
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service type-more"></span>
+						<span class="blind">바로가기 펼침</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 메뉴 끝 -->
+		<div class="box-pay">
+			<a href="#" class="link-pay"></a>
+		</div>
 	</header>
-	<div class="container"></div>
+	<div id="container"></div>
 	<footer></footer>
 </body>
 </html>
