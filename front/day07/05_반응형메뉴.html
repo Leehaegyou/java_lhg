@@ -25,6 +25,7 @@
 			display: block; height: 50px; text-align: center; line-height: 50px; font-size: 20px;
 			color: black; text-decoration: none;
 		}
+
 		.ham-menu{
 			width: 50px; height: 50px; border: 3px solid transparent;
 			position: absolute; top: 0; right: 0; cursor: pointer;
@@ -33,6 +34,9 @@
 		.ham-menu .bar{
 			width: 100%; height: 5px; background-color: black; border-radius: 10px;
 			display: block; position: absolute;
+			
+		}
+		.ham-menu .bar:not(.bar-mid){
 			transition: transform .2s;
 		}
 		.ham-menu .bar.bar-top{	top: 0;}
@@ -40,13 +44,13 @@
 		.ham-menu .bar.bar-bottom{	bottom: 0;		}
 		#ham:checked~.ham-menu .bar-top{
 			transform-origin: 0% 0%;
-			transform: rotate(41deg); width: calc(100% * 1.4);
+			transform: rotate(40deg); width: calc(100% * 1.414);
 		}
-		#ham:checked~.ham-menu.bar-bottom{
+		#ham:checked~.ham-menu .bar-bottom{
 			transform-origin: 0% 100%;
-			transform: rotate(-41deg); width: calc(100% * 1.4);
+			transform: rotate(-40deg); width: calc(100% * 1.414);
 		}
-		#ham:checked~.ham-menu.bar-mid{
+		#ham:checked~.ham-menu .bar-mid{
 			transform: scaleY(0);
 		}
 		#ham{
@@ -56,7 +60,7 @@
 		@media screen and (max-width:900px) {
 			.list-menu{
 				display: none;
-				position: absolute; top: 56; right: 0;
+				position: absolute; top: 56px; right: 0;
 			}
 			.item-menu{
 				width: 400px; float: none;
@@ -75,13 +79,13 @@
 </head>
 <body>
 	<nav>
+		<input type="checkbox" id="ham">
 		<label class="ham-menu" for="ham">
-			<input type="checkbox" id="ham">
 			<span class="bar bar-top"></span>
 			<span class="bar bar-mid"></span>
 			<span class="bar bar-bottom"></span>
 		</label>
-		<ul class="lsit-menu">
+		<ul class="list-menu">
 			<li class="item-menu">
 				<a href="#" class="link-menu">메뉴1</a>
 			</li>

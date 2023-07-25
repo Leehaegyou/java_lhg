@@ -7,8 +7,5 @@
 	float: left; width: 50%; height: 500px; background: red;
 }
 .inner-box:nth-child(2){
- 	background: blue;
-}
-.inner-box:nth-child(3){
-	background: yellow;
+	background: blue;
 }
