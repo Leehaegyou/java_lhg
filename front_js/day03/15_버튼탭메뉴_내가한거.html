@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>탭 메뉴 예제</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		*{margin: 0; padding: 0;}
+		.list-button{
+			list-style: none; border: 3px solid black;
+			display: flex;
+		}
+		.item-button+.item-button{
+			border-left: 3px solid black;
+		}
+		.link-button{
+			display: block; text-align: center; height: 50px; line-height: 50px;
+			font-size: 30px; font-weight: bold; color: black;
+			text-decoration: none; cursor: pointer;
+		}
+		.item-button2{width: 40%; border: 3px solid black; 
+			font-size: 30px; font-weight: bold; color: black;
+			text-align: center; height: 50px; line-height: 50px;
+		}
+		.item-button1{width: 10%; border: 3px solid black;}
+		.item-button3{width: 10%; border: 3px solid black;}
+		.item-button4{width: 40%; border: 3px solid black;}
+		.list-menu{
+			list-style: none; border: 3px solid black;
+			display: flex;
+		}
+		.item-menu+.item-menu{
+			border-left: 3px solid black;
+		}
+		.item-menu{width: 100%;}
+		.item-menu:nth-child(1).active{background-color: red; color: white;}
+		.item-menu:nth-child(2).active{background-color: blue; color: white;}
+		.item-menu:nth-child(3).active{background-color: yellow; color: white;}
+		.link-menu{
+			display: block; text-align: center; height: 50px; line-height: 50px;
+			font-size: 25px; font-weight: bold; color: black;
+			text-decoration: none; cursor: pointer;
+		}
+		.list-box{margin-top: 20px;}
+		.item-box{height: 200px; display: none;}
+		.box1{background: red;}
+		.box2{background: blue;}
+		.box3{background: yellow;}
+	</style>
+</head>
+<body>
+	<ul class="list-menu">
+		<li class="item-menu" data-target=".box1">
+			<a href="#" class="link-menu">빨강</a>
+		</li>
+		<li class="item-menu" data-target=".box2">
+			<a href="#" class="link-menu">파랑</a>
+		</li>
+		<li class="item-menu" data-target=".box3">
+			<a href="#" class="link-menu">노랑</a>
+		</li>
+	</ul>
+	<ul class="list-button">
+		<li class="item-button1">
+			<a href="#" class="link-button"><</a>
+		</li>
+		<li class="item-button2">
+			<a href="#" class="link-button">1</a>
+		</li>
+		<li class="item-button4">
+			<a href="#" class="link-button">3</a>
+		</li>
+		<li class="item-button3">
+			<a href="#" class="link-button">></a>
+		</li>
+	</ul>
+	<ul class="list-box">
+		<li class="item-box box1"></li>
+		<li class="item-box box2"></li>
+		<li class="item-box box3"></li>
+	</ul>
+	<script>
+		$('.item-menu').click(function(){
+			let target = $(this).attr('data-target');
+			$('.item-box').hide();
+			$(target).show();
+			$('.item-menu').removeClass('active');
+			$(this).addClass('active');
+			page = $(this).index() + 1;
+			drawPage(page);
+		});
+		
+		let page = 1;
+		const MAX_PAGE = $('.item-menu').length;
+		$('.item-menu').eq(page-1).click();
+	
+		$('.item-button1').click(function(){
+			page = --page == 0 ? MAX_PAGE : page;
+			$('.item-menu').eq(page-1).click();
+			drawPage(page);
+		});
+		
+		$('.item-button3').click(function(){
+			page = ++page > MAX_PAGE ? 1 : page;
+			$('.item-menu').eq(page-1).click();
+			drawPage(page);
+		});
+		
+		function drawPage(page){
+			$('.item-button2').text(page);
+		}
+		// $('.btn').click(function(){ 내가 한것 = 버튼 색상이 돌아오지 않음
+		// 	$(this).attr('data-target');
+		// 	console.log(target);
+		// });
+		// $('.box').hide();
+		// $('.btn1').click(function(){
+		// 	$('.box').hide();
+		// 	$('.box1').show();
+		// 	$('.btn1').css('background', 'red');
+			
+		// });
+		// $('.btn2').click(function(){
+		// 	$('.box').hide();
+		// 	$('.box2').show();
+		// 	$('.btn2').css('background', 'blue');
+		// });
+		// $('.btn3').click(function(){
+		// 	$('.box').hide();
+		// 	$('.box3').show();
+		// 	$('.btn3').css('background', 'yellow');
+		// });
+</script>
+</body>
+</html>
