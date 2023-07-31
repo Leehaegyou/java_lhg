@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<ul>
+		<li>항목1</li>
+		<li>항목2</li>
+		<li>항목3</li>
+		<li>항목4</li>
+		<li>항목5</li>
+		<li>항목6</li>
+		<li>항목7</li>
+	</ul>
+<script>
+	$('li').click(function(){
+		$('li').css('border', '3px solid white');
+		let index = $(this).index(0);
+		$(this).eq(0).css('border', '3px solid yellow');
+		$(this).prev().css('border', '3px solid orange');
+		$(this).next().css('border', '3px solid orange');
+	});
+</script>
+</body>
+</html>

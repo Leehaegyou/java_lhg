@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<button class="btn btn1">질문추가</button>
+	<div class="box">
+		<div class="inner-box">
+			<input type="text" class="input" placeholder="질문"> <br>
+			<textarea placeholder="답변" id="" cols="30" rows="10"></textarea>
+		</div>
+	</div>
+	<button class="btn btn2">질문등록</button>
+	<script>
+		$('.btn1').click(function(){
+			let Element =
+			`<div class="inner-box">
+				<input type="text" class="input" placeholder="질문"> <br>
+				<textarea placeholder="답변" id="" cols="30" rows="10"></textarea>
+			</div>`
+			$('.box').append(Element);
+		});
+	</script>
+</body>
+</html>

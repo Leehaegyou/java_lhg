@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>탭 예제</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.box{
+			height: 200px; background-color: blue;
+		}
+		.box2{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn btn1" data-target=".box1">박스1</button>
+	<button class="btn btn2" data-target=".box2">박스2</button>
+	<div class="container">
+		<div class="box box1"></div>
+		<div class="box box2"></div>
+	</div>
+	<script>
+		// $('.btn').click(function(){
+		// 	let target = $(this).data('target');
+		// 	$('.box').hide();
+		// 	$(target).show();
+		// });
+		$('.btn').click(function(){
+			let index = $(this).index() - 1;
+			$('.box')
+			.hide()
+			.eq(index)
+			.show();
+		});
+	</script>
+</body>
+</html>
