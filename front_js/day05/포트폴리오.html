@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>포트폴리오</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		*{padding: 0;}
+		.list-menu{
+			list-style: none; border: 1px solid black;
+			display: flex; margin: 0;
+		}
+		.item-menus+.item-menus{
+			border-left: 1px solid black;
+		}
+		.item-menus2+.item-menus2{
+			border-left: 1px solid black;
+		}
+		.item-menus{
+			width: 100%; background-color: coral;
+		}
+		.item-menus2{
+			background-color: antiquewhite;
+		}
+		.link-menu{
+			display: block; text-align: center; height: 30px; line-height: 30px;
+			font-size: 15px; font-weight: bold; color: #fff;
+			text-decoration: none; cursor: pointer;
+		}
+		.link-menu2{
+			display: block; text-align:left; height: 30px; line-height: 30px;
+			font-size: 15px; font-weight: 100; color: black;
+			text-decoration: none; cursor: pointer;
+		}
+		.item-menu1{width: 5%}
+		.item-menu2{width: 70%;}
+		.item-menu3{width: 10%;}
+		.item-menu4{width: 10%;}
+		.item-menu5{width: 5%;}
+		.item-menu6{width: 5%;}
+		.item-menu7{width: 60%;}
+		.item-menu8{width: 10%;}
+		.item-menu9{width: 10%;}
+		.item-menu10{width: 10%;}
+		.item-menu11{width: 5%;}
+		.item-menu12{width: 75%;}
+		.item-menu13{width: 25%;}
+		.btn2{
+			width: 100%; height: 100%;
+		}
+		
+	</style>
+</head>
+<body>
+	<hr>
+	<form action="insert.no" method="post">
+		<fieldset>
+			<legend>공지사항 작성하기</legend>
+			&nbsp;&nbsp;&nbsp; 제목 &nbsp;&nbsp;&nbsp;
+			<input type="text" name="title" placeholder="제목을 입력하시오."><br>
+			&nbsp;&nbsp;&nbsp; 내용 &nbsp;&nbsp;&nbsp;
+			<textarea name="content" id="" cols="22" rows="10" placeholder="내용을 입력하시오.">
+			</textarea> <br>
+			첨부파일 &nbsp;<input type="file" name="uploadFile" ><br><br>
+			<input type="button" value="작성하기" 
+				style="position:relative; bottom: 10px; left: 100px;">
+		</fieldset>
+	</form>
+	<hr>
+	
+	<ul class="list-menu">
+		<li class="item-menus item-menu1">
+			<a href="#" class="link-menu">번호</a>
+		</li>
+		<li class="item-menus item-menu2">
+			<a href="#" class="link-menu">제목</a>
+		</li>
+		<li class="item-menus item-menu3">
+			<a href="#" class="link-menu">작성자</a>
+		</li>
+		<li class="item-menus item-menu4">
+			<a href="#" class="link-menu">작성일</a>
+		</li>
+		<li class="item-menus item-menu5">
+			<a href="#" class="link-menu">조회수</a>
+		</li>
+	</ul>	
+	<ul class="list-menu">
+		<li class="item-menus2 item-menu6">
+			<a href="#" class="link-menu2">1</a>
+		</li>
+		<li class="item-menus2 item-menu7">
+			<a href="#" class="link-menu2">공지사항 제목 1</a>
+		</li>
+		<li class="item-menus2 item-menu8">
+			<button class="btn2">바로가기</button>
+		</li>
+		<li class="item-menus2 item-menu9">
+			<a href="#" class="link-menu2">user1</a>
+		</li>
+		<li class="item-menus2 item-menu10">
+			<a href="#" class="link-menu2" >2023-08-01</a>
+		</li>
+		<li class="item-menus2 item-menu11">
+			<a href="#" class="link-menu2">1</a>
+		</li>
+	</ul>
+	<ul class="list-menu">
+		<li class="item-menus2 item-menu6">
+			<a href="#" class="link-menu2">2</a>
+		</li>
+		<li class="item-menus2 item-menu7">
+			<a href="#" class="link-menu2">공지사항 제목 2</a>
+		</li>
+		<li class="item-menus2 item-menu8">
+			<button class="btn2">바로가기</button>
+		</li>
+		<li class="item-menus2 item-menu9">
+			<a href="#" class="link-menu2">user2</a>
+		</li>
+		<li class="item-menus2 item-menu10">
+			<a href="#" class="link-menu2" >2023-08-02</a>
+		</li>
+		<li class="item-menus2 item-menu11">
+			<a href="#" class="link-menu2">2</a>
+		</li>
+	</ul>
+	<ul class="list-menu">
+		<li class="item-menus2 item-menu6">
+			<a href="#" class="link-menu2">3</a>
+		</li>
+		<li class="item-menus2 item-menu7">
+			<a href="#" class="link-menu2">공지사항 제목 3</a>
+		</li>
+		<li class="item-menus2 item-menu8">
+			<button class="btn2">바로가기</button>
+		</li>
+		<li class="item-menus2 item-menu9">
+			<a href="#" class="link-menu2">user3</a>
+		</li>
+		<li class="item-menus2 item-menu10">
+			<a href="#" class="link-menu2" >2023-08-03</a>
+		</li>
+		<li class="item-menus2 item-menu11">
+			<a href="#" class="link-menu2">3</a>
+		</li>
+	</ul>
+	<ul class="list-menu">
+		<li class="item-menus2 item-menu6">
+			<a href="#" class="link-menu2">4</a>
+		</li>
+		<li class="item-menus2 item-menu7">
+			<a href="#" class="link-menu2">공지사항 제목 4</a>
+		</li>
+		<li class="item-menus2 item-menu8">
+			<button class="btn2">바로가기</button>
+		</li>
+		<li class="item-menus2 item-menu9">
+			<a href="#" class="link-menu2">user4</a>
+		</li>
+		<li class="item-menus2 item-menu10">
+			<a href="#" class="link-menu2" >2023-08-04</a>
+		</li>
+		<li class="item-menus2 item-menu11">
+			<a href="#" class="link-menu2">4</a>
+		</li>
+	</ul>
+	<ul class="list-menu">
+		<li class="item-menus2 item-menu6">
+			<a href="#" class="link-menu2">5</a>
+		</li>
+		<li class="item-menus2 item-menu7">
+			<a href="#" class="link-menu2">공지사항 제목 5</a>
+		</li>
+		<li class="item-menus2 item-menu8">
+			<button class="btn2">바로가기</button>
+		</li>
+		<li class="item-menus2 item-menu9">
+			<a href="#" class="link-menu2">user5</a>
+		</li>
+		<li class="item-menus2 item-menu10">
+			<a href="#" class="link-menu2" >2023-08-05</a>
+		</li>
+		<li class="item-menus2 item-menu11">
+			<a href="#" class="link-menu2">5</a>
+		</li>
+	</ul>	
+	<ul class="list-menu">
+		<li class="item-menus item-menu12">
+			<a href="#" class="link-menu">전체 공지사항 갯수</a>
+		</li>
+		<li class="item-menus item-menu13">
+			<a href="#" class="link-menu">5개</a>
+		</li>
+	</ul>	
+</body>
+</html>
