@@ -27,3 +27,4 @@ public class GenericEx {
 		System.out.println(std.kor);
 	}
 }
+

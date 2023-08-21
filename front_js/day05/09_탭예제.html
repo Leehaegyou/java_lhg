@@ -7,7 +7,7 @@
 	<script src="../js/jquery.min.js"></script>
 	<style>
 		.box{
-			height: 200px; background-color: blue;
+			height: 200px; background-color: blue; display: none;
 		}
 		.box2{
 			background-color: orange;
@@ -25,6 +25,7 @@
 		<div class="box box2"></div>
 	</div>
 	<script>
+		//방법1. value를 이용
 		$('[name=box]').click(function(){
 			let value = $(this).val();
 			$('.box').hide();

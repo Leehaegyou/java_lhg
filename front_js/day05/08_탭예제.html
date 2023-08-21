@@ -7,7 +7,7 @@
 	<script src="../js/jquery.min.js"></script>
 	<style>
 		.box{
-			height: 200px; background-color: blue;
+			height: 200px; background-color: blue; display: none;
 		}
 		.box2{
 			background-color: orange;
@@ -22,17 +22,23 @@
 		<div class="box box2"></div>
 	</div>
 	<script>
-		// $('.btn').click(function(){
-		// 	let target = $(this).data('target');
-		// 	$('.box').hide();
-		// 	$(target).show();
-		// });
+		//방법1. data-target을 이용
+		/*
 		$('.btn').click(function(){
-			let index = $(this).index() - 1;
-			$('.box')
-			.hide()
-			.eq(index)
-			.show();
+			//let target = $(this).attr('data-target');
+			let target = $(this).data('target');
+			$('.box').hide();
+			$(target).show();
+		})*/
+		//버튼 순서와 박스 순서가 같다는 성질 이용
+		$('.btn').click(function(){
+			let index = $(this).index();
+			//$('.box').hide();
+			//$('.box').eq(index).show();
+			$('.box') //모든 박스를
+				.hide()	//감추고
+				.eq(index)	//index+1번재 박스를
+				.show();	//보여줌
 		});
 	</script>
 </body>

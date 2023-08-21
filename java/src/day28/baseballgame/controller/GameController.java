@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-import day27.practice.student.vo.AttendanceBook;
+import day27.attendance.vo.AttendanceBook;
 import day28.baseballgame.vo.BaseballGame;
 import day28.baseballgame.vo.Record;
 
@@ -100,7 +100,6 @@ public class GameController {
 			}
 			//결과 출력
 			bbGame.printResult();
-			user.clear();
 			count++;
 		}while(bbGame.getStrike() != 3);
 		//기록 관리(개수제한X)
@@ -118,6 +117,7 @@ public class GameController {
 	}
 
 }
+
 
 
 

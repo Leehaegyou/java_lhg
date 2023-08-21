@@ -12,6 +12,7 @@ public class RecordGame {
 		this.id = id;
 		this.count = count;
 	}
+	
 	@Override
 	public String toString() {
 		return "[" + id + " : " + count + "]";

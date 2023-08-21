@@ -55,7 +55,6 @@ public class LibraryController {
 			e.printStackTrace();
 		}
 	}
-	
 	private void loadLoan(String fileName) {
 		try(ObjectInputStream ois 
 			= new ObjectInputStream(new FileInputStream(fileName))){
@@ -71,7 +70,7 @@ public class LibraryController {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			//ObjectInputStream을 이용하여 객체단위로 읽어올 때 클래스가 Serializable인터페이스를 구현하지 않으면 발생 
-			System.out.println("Book 클래스를 찾을 수 없습니다.");
+			System.out.println("LoanBrowsing 클래스를 찾을 수 없습니다.");
 		} 
 	}
 	
@@ -127,9 +126,10 @@ public class LibraryController {
 	}
 
 	private void retrunBook() {
+		//엔터 처리
 		sc.nextLine();
 		//반납도서 번호를 입력
-		System.out.print("도서 번호");
+		System.out.print("도서 번호 : ");
 		String num = sc.nextLine();
 		//대출한 도서가 아니면 반납을 X
 		int index = bookList.indexOf(new Book(num, null, null, null));
@@ -138,18 +138,17 @@ public class LibraryController {
 			return;
 		}
 		//맞으면 반납
-		//반납한 도서에 상태를 대출 가능으로 수정
+		//반납한 도서의 상태를 대출 가능으로 수정
 		Book returnBook = bookList.get(index);
 		returnBook.returnBook();
 		
 		//대출열람 리스트에서 대출한 도서에 반납일을 오늘날짜로 수정
 		//반납한 도서의 대출 열람을 찾아야 함.
-		int Ibindex = loanList.lastIndexOf(new LoanBrowsing(returnBook, null, 14));
-		LoanBrowsing tmpLb = loanList.get(Ibindex);
+		int lbIndex = loanList.lastIndexOf(new LoanBrowsing(returnBook, null, 14));
+		LoanBrowsing tmpLb = loanList.get(lbIndex);
 		tmpLb.setReturnDate(new Date());
 		System.out.println("대출일 : " + tmpLb.getLoanDateStr());
 		System.out.println("반납일 : " + tmpLb.getReturnDateStr());
-		
 	}
 
 	private void loanBook() {
@@ -205,6 +204,7 @@ public class LibraryController {
 		//대출일을 출력
 		System.out.println("대출일 : " + lb.getLoanDateStr());
 		//반납예정일 출력
+		System.out.println("반납일 : " + lb.getEstimatedDateStr());
 	}
 
 	private void insertBook() {

@@ -26,7 +26,7 @@
 		</li>
 	</ul>
 	<script>
-		/*
+		/* 
 		siblings()
 		- 모든 형제 요소들
 		siblings('선택자')
@@ -39,18 +39,18 @@
 		- 이전 형제 요소들 중 선택자 전까지 형제 요소들
 		next()
 		- 다음 형제 요소
-		-nextAll()
+		nextAll()
 		- 다음 모든 형제 요소들
 		nextUntil('선택자')
 		- 다음 형제 요소들 중 선택자 전까지 형제 요소들
 		*/
 		$('.center').siblings().css('font-size', '30px');
-		$('.center').next().css('background', 'yellow');
-		$('.center').prev().css('background', 'pink');
-		$('.center').nextAll().css('border', '1px solid red');
-		$('.center').prevAll().css('border', '1px solid blue');
+		$('.center').next().css('background','yellow');
+		$('.center').prev().css('background','pink');
+		$('.center').nextAll().css('border','1px solid red');
+		$('.center').prevAll().css('border','1px solid blue');
 		$('.center').nextUntil('.last').css('padding-left', '20px');
-		$('.center').prevUntil('.first').css('font-size', 'bold');
+		$('.center').prevUntil('.first').css('font-weight', 'bold');
 	</script>
 </body>
 </html>

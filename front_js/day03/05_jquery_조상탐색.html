@@ -10,10 +10,10 @@
 			padding: 10px; border: 3px solid black;
 		}
 		.item{
-			padding: 10px;
+			padding: 10px; border: 3px solid black;
 		}
 		.link{
-			padding: 10px;
+			padding: 10px; border: 3px solid black; display: block;
 		}
 	</style>
 </head>
@@ -30,7 +30,7 @@
 		</li>
 	</ul>
 	<script>
-		/*
+		/* 
 		parent()
 		- 부모 요소를 선택
 		parent('선택자')
@@ -44,8 +44,8 @@
 		*/
 		$('.link1').parent().css('background', 'yellow');
 		$('.link1').parents().css('border-color', 'red');
-		$('.link1').parents('ul').css('border-left', '3px solid blue');
-		$('.link1').parentsUntil('ul').css('border-radius', '10px');
+		$('.link1').parents('ul').css('border-left','3px solid blue');
+		$('.link1').parentsUntil('ul').css('border-radius','10px');
 	</script>
 </body>
 </html>
